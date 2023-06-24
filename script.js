@@ -16,16 +16,15 @@ let weather = {
     const { temp, humidity } = data.main;
     const { speed } = data.wind;
     console.log(name, icon, description, temp, humidity, speed);
-    document.querySelector(".city").innerText = "Weather in" + name;
+    document.querySelector(".city").innerText = "Weather in " + name;
     document.querySelector(
       ".icon"
-    ).src = `https://openweathermap.org/img/wn/${icon}2x.png`;
-    0;
+    ).src = `https://openweathermap.org/img/wn/${icon}.png`;
     document.querySelector(".description").innerText = description;
-    document.querySelector(".temp").innerText = temp + "°C";
+    document.querySelector(".temp").innerText = temp + " °C";
     document.querySelector(".humidity").innerText =
-      "Humidity:" + humidity + "%";
-    document.querySelector(".wind").innerText = "Wind Speed:" + speed + "km/h";
+      "Humidity:  " + humidity + "%";
+    document.querySelector(".wind").innerText = "Wind Speed:  " + speed + "km/h";
   },
   search: function () {
     this.fetchWeather(document.querySelector(".search-bar").value);
@@ -42,4 +41,4 @@ document.querySelector(".search-bar").addEventListener("keyup", (event) => {
   }
 });
 
-weather.fetchWeather("Denver");
+weather.fetchWeather("Ankara");
