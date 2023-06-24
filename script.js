@@ -15,7 +15,6 @@ let weather = {
     const { icon, description } = data.weather[0];
     const { temp, humidity } = data.main;
     const { speed } = data.wind;
-    console.log(name, icon, description, temp, humidity, speed);
     document.querySelector(".city").innerText = "Weather in " + name;
     document.querySelector(
       ".icon"
@@ -25,6 +24,7 @@ let weather = {
     document.querySelector(".humidity").innerText =
       "Humidity:  " + humidity + "%";
     document.querySelector(".wind").innerText = "Wind Speed:  " + speed + "km/h";
+    document.body.style.backgroundImage = `url(https://picsum.photos/id/${Math.round(temp)}/1600/900)`;
   },
   search: function () {
     this.fetchWeather(document.querySelector(".search-bar").value);
